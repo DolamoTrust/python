@@ -38,8 +38,8 @@ def aps_calculator():
 
 def call_apscalcualtor():
 
-   n = int(input("would you like to calculate your aps if yes type 1 and enter: "))
-   if n== 1:
+   n = input("would you like to calculate your aps if yes and enter: ")
+   if n== "yes":
       aps_calculator()
    else:
       print("You may exit")
@@ -47,4 +47,5 @@ def call_apscalcualtor():
      
 welcome()
 age_confirmer()
+# to be continued
 
