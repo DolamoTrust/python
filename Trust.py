@@ -1,40 +1,50 @@
 
 def welcome():
    name = input("Enter your 1st-name: ")
-   middle_name = input("Enter your middle name: ")
    surname = input("enter your Surname: ")
-    
-   print("WELCOME ",name,middle_name,surname )
-   return name + middle_name + surname
-def age_confirmer(name):
-    username = name
-    print(username)
-    # num = int(input("enter your age: "))
-    # if num >= 18:
-    #  print("You meet age requirements!")
-    # elif num < 18:
-    #     print("Unfortunately you dont meet age requirements!")
-    # else :
-    #     print("you have to enter age")
+   print("WELCOME:",name,surname)
+   return name
 
-def testmark_checker():
+def age_confirmer():
+    num = int(input("enter your age: "))
+    if num >= 18:
+     print("You meet age requirements!")
+     call_apscalcualtor()
+    elif num < 18:
+        print("Unfortunately you dont meet age requirements!")
+    else :
+        print("you have to enter age")
+
+def aps_calculator():
    
-   test1 = int(input("Insert your test1 mark /50: "))
-   test2 = int(input("Insert your test2 mark /50:"))
-   test3 = int(input("Insert your test3 mark /50: "))
-   test4 = int(input("Insert your test4 mark /50: "))  
-   total_test = test1 + test2 + test3 + test4
-   total_testmark = total_test / 200
-   total_percentage = total_testmark * 100
-   print("Your final mark is: " ,total_percentage)
+   maths = int(input("Insert your maths level /7: "))
+   L_science = int(input("Insert your life sciences level /7:"))
+   P_science = int(input("Insert your pysical sciences level /7: "))
+   Geography = int(input("Insert your geography level /7: "))
+   home_language = int(input("Insert your level home language /7: "))
+   add_language = int(input("Insert your level additional language /7:"))  
+   total_aps = maths + L_science + P_science + Geography + home_language + add_language
+   print("Your final APS is:" ,total_aps)
 
-   if total_percentage >= 50:
-      print("you have met the pass mark")
-      print("You may proceed to the Submit your mark to you end year report")
+   if home_language >= 4 and total_aps >=23 :
+      print("Bachelor pass")
+   elif home_language >= 4 and total_aps >=15 and total_aps <23:
+      print("Diploma pass")
+   elif home_language >=4 and total_aps <15:
+      print("Higher Certificate")       
+   elif home_language <3:
+      print("You can apply to rewrite")  
+
+
+def call_apscalcualtor():
+
+   n = int(input("would you like to calculate your aps if yes type 1 and enter: "))
+   if n== 1:
+      aps_calculator()
    else:
-         print("you have not met the pass mark")
-         print('You can retake the exams')   
+      print("You may exit")
 
-age_confirmer(welcome)       
+     
 welcome()
-testmark_checker()
+age_confirmer()
+
